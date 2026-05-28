@@ -10,7 +10,7 @@
 <br/>
 
 **Laboratorio No. 2 — Diseño e Implementación de una Ontología en Protégé**  
-*Sistemas Inteligentes · 7° Semestre · Ingeniería Informática*
+*Sistemas Inteligentes · Ingeniería Informática*
 
 <br/>
 
