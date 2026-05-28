@@ -254,7 +254,7 @@ Laboratorio2_Ontologia_SistemasIA/
 <div align="center">
 
 **Alejandro De Mendoza**  
-Ingeniería Informática 
+Ingeniería Informática - 
 *Fundación Universitaria Internacional de La Rioja (UNIR)*
 
 [![GitHub](https://img.shields.io/badge/GitHub-AlejoTechEngineer-181717?style=flat-square&logo=github)](https://github.com/AlejoTechEngineer)
