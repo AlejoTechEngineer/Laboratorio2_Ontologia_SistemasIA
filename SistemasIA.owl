@@ -1,0 +1,603 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ale/ontologies/sistemas-ia#"
+     xml:base="http://www.semanticweb.org/ale/ontologies/sistemas-ia"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ale/ontologies/sistemas-ia">
+        <dc:creator>Fundación Universitaria Internacional de La Rioja</dc:creator>
+        <dc:description>Ontología para la representación del conocimiento en Sistemas de Inteligencia Artificial, cubriendo modelos, datasets, algoritmos y métricas de evaluación.</dc:description>
+        <dc:title>Ontología de Sistemas de Inteligencia Artificial</dc:title>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+
+    <!-- ============================================================ -->
+    <!--  CLASES PRINCIPALES                                          -->
+    <!-- ============================================================ -->
+
+    <!-- ModeloIA -->
+    <owl:Class rdf:about="#ModeloIA">
+        <rdfs:label xml:lang="es">Modelo de IA</rdfs:label>
+        <rdfs:comment>Representa cualquier modelo de inteligencia artificial entrenado para resolver tareas específicas.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Dataset -->
+    <owl:Class rdf:about="#Dataset">
+        <rdfs:label xml:lang="es">Dataset</rdfs:label>
+        <rdfs:comment>Conjunto de datos estructurados o no estructurados utilizado para entrenar, validar o evaluar modelos de IA.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Algoritmo -->
+    <owl:Class rdf:about="#Algoritmo">
+        <rdfs:label xml:lang="es">Algoritmo</rdfs:label>
+        <rdfs:comment>Procedimiento computacional utilizado para entrenar o inferir con modelos de IA.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Metrica -->
+    <owl:Class rdf:about="#Metrica">
+        <rdfs:label xml:lang="es">Métrica de Evaluación</rdfs:label>
+        <rdfs:comment>Medida cuantitativa utilizada para evaluar el rendimiento de un modelo de IA.</rdfs:comment>
+    </owl:Class>
+
+    <!-- TareaIA -->
+    <owl:Class rdf:about="#TareaIA">
+        <rdfs:label xml:lang="es">Tarea de IA</rdfs:label>
+        <rdfs:comment>Problema o dominio de aplicación que un modelo de IA intenta resolver.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Framework -->
+    <owl:Class rdf:about="#Framework">
+        <rdfs:label xml:lang="es">Framework de IA</rdfs:label>
+        <rdfs:comment>Biblioteca o plataforma de software utilizada para desarrollar e implementar modelos de IA.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ============================================================ -->
+    <!--  SUBCLASES DE ModeloIA                                       -->
+    <!-- ============================================================ -->
+
+    <owl:Class rdf:about="#ModeloAprendizajeProfundo">
+        <rdfs:subClassOf rdf:resource="#ModeloIA"/>
+        <rdfs:label xml:lang="es">Modelo de Aprendizaje Profundo</rdfs:label>
+        <rdfs:comment>Modelo basado en redes neuronales con múltiples capas ocultas.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ModeloAprendizajeAutomatico">
+        <rdfs:subClassOf rdf:resource="#ModeloIA"/>
+        <rdfs:label xml:lang="es">Modelo de Aprendizaje Automático Clásico</rdfs:label>
+        <rdfs:comment>Modelo de machine learning tradicional que no utiliza redes neuronales profundas.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ModeloLenguaje">
+        <rdfs:subClassOf rdf:resource="#ModeloAprendizajeProfundo"/>
+        <rdfs:label xml:lang="es">Modelo de Lenguaje</rdfs:label>
+        <rdfs:comment>Modelo especializado en procesamiento y generación de lenguaje natural (LLM).</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ModeloVision">
+        <rdfs:subClassOf rdf:resource="#ModeloAprendizajeProfundo"/>
+        <rdfs:label xml:lang="es">Modelo de Visión por Computadora</rdfs:label>
+        <rdfs:comment>Modelo especializado en procesamiento y análisis de imágenes y video.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ModeloGenerativo">
+        <rdfs:subClassOf rdf:resource="#ModeloAprendizajeProfundo"/>
+        <rdfs:label xml:lang="es">Modelo Generativo</rdfs:label>
+        <rdfs:comment>Modelo capaz de generar nuevos datos que imitan la distribución de los datos de entrenamiento.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ============================================================ -->
+    <!--  SUBCLASES DE Dataset                                        -->
+    <!-- ============================================================ -->
+
+    <owl:Class rdf:about="#DatasetTexto">
+        <rdfs:subClassOf rdf:resource="#Dataset"/>
+        <rdfs:label xml:lang="es">Dataset de Texto</rdfs:label>
+        <rdfs:comment>Colección de datos textuales usada para NLP.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DatasetImagen">
+        <rdfs:subClassOf rdf:resource="#Dataset"/>
+        <rdfs:label xml:lang="es">Dataset de Imágenes</rdfs:label>
+        <rdfs:comment>Colección de imágenes etiquetadas o no etiquetadas para visión por computadora.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DatasetTabular">
+        <rdfs:subClassOf rdf:resource="#Dataset"/>
+        <rdfs:label xml:lang="es">Dataset Tabular</rdfs:label>
+        <rdfs:comment>Datos estructurados en formato de tabla con filas y columnas.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ============================================================ -->
+    <!--  SUBCLASES DE Algoritmo                                      -->
+    <!-- ============================================================ -->
+
+    <owl:Class rdf:about="#AlgoritmoSupervisado">
+        <rdfs:subClassOf rdf:resource="#Algoritmo"/>
+        <rdfs:label xml:lang="es">Algoritmo Supervisado</rdfs:label>
+        <rdfs:comment>Algoritmo que aprende a partir de datos etiquetados con pares entrada-salida.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AlgoritmoNoSupervisado">
+        <rdfs:subClassOf rdf:resource="#Algoritmo"/>
+        <rdfs:label xml:lang="es">Algoritmo No Supervisado</rdfs:label>
+        <rdfs:comment>Algoritmo que descubre patrones en datos sin etiquetas.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AlgoritmoRefuerzo">
+        <rdfs:subClassOf rdf:resource="#Algoritmo"/>
+        <rdfs:label xml:lang="es">Algoritmo de Aprendizaje por Refuerzo</rdfs:label>
+        <rdfs:comment>Algoritmo que aprende mediante interacción con un entorno y recompensas.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#AlgoritmoOptimizacion">
+        <rdfs:subClassOf rdf:resource="#Algoritmo"/>
+        <rdfs:label xml:lang="es">Algoritmo de Optimización</rdfs:label>
+        <rdfs:comment>Algoritmo usado para minimizar la función de pérdida durante el entrenamiento.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ============================================================ -->
+    <!--  SUBCLASES DE Metrica                                        -->
+    <!-- ============================================================ -->
+
+    <owl:Class rdf:about="#MetricaClasificacion">
+        <rdfs:subClassOf rdf:resource="#Metrica"/>
+        <rdfs:label xml:lang="es">Métrica de Clasificación</rdfs:label>
+        <rdfs:comment>Métrica utilizada para evaluar tareas de clasificación.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MetricaRegresion">
+        <rdfs:subClassOf rdf:resource="#Metrica"/>
+        <rdfs:label xml:lang="es">Métrica de Regresión</rdfs:label>
+        <rdfs:comment>Métrica utilizada para evaluar tareas de predicción numérica.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#MetricaGeneracion">
+        <rdfs:subClassOf rdf:resource="#Metrica"/>
+        <rdfs:label xml:lang="es">Métrica de Generación</rdfs:label>
+        <rdfs:comment>Métrica utilizada para evaluar la calidad del texto o imágenes generadas.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ============================================================ -->
+    <!--  SUBCLASES DE TareaIA                                        -->
+    <!-- ============================================================ -->
+
+    <owl:Class rdf:about="#Clasificacion">
+        <rdfs:subClassOf rdf:resource="#TareaIA"/>
+        <rdfs:label xml:lang="es">Clasificación</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Regresion">
+        <rdfs:subClassOf rdf:resource="#TareaIA"/>
+        <rdfs:label xml:lang="es">Regresión</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DeteccionObjetos">
+        <rdfs:subClassOf rdf:resource="#TareaIA"/>
+        <rdfs:label xml:lang="es">Detección de Objetos</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GeneracionTexto">
+        <rdfs:subClassOf rdf:resource="#TareaIA"/>
+        <rdfs:label xml:lang="es">Generación de Texto</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Clustering">
+        <rdfs:subClassOf rdf:resource="#TareaIA"/>
+        <rdfs:label xml:lang="es">Clustering</rdfs:label>
+    </owl:Class>
+
+    <!-- ============================================================ -->
+    <!--  OBJECT PROPERTIES                                           -->
+    <!-- ============================================================ -->
+
+    <!-- entrenaCon -->
+    <owl:ObjectProperty rdf:about="#entrenaCon">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="#Dataset"/>
+        <rdfs:label xml:lang="es">entrena con</rdfs:label>
+        <rdfs:comment>Relaciona un modelo con el dataset usado en su entrenamiento.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- usaAlgoritmo -->
+    <owl:ObjectProperty rdf:about="#usaAlgoritmo">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="#Algoritmo"/>
+        <rdfs:label xml:lang="es">usa algoritmo</rdfs:label>
+        <rdfs:comment>Relaciona un modelo con el algoritmo de entrenamiento empleado.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- evaluadoCon -->
+    <owl:ObjectProperty rdf:about="#evaluadoCon">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="#Metrica"/>
+        <rdfs:label xml:lang="es">evaluado con</rdfs:label>
+        <rdfs:comment>Indica las métricas utilizadas para evaluar el rendimiento del modelo.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- resuelve -->
+    <owl:ObjectProperty rdf:about="#resuelve">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="#TareaIA"/>
+        <rdfs:label xml:lang="es">resuelve</rdfs:label>
+        <rdfs:comment>Indica la tarea de IA que el modelo está diseñado para resolver.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- implementadoCon -->
+    <owl:ObjectProperty rdf:about="#implementadoCon">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="#Framework"/>
+        <rdfs:label xml:lang="es">implementado con</rdfs:label>
+        <rdfs:comment>Relaciona un modelo con el framework de software utilizado para su implementación.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- requiereDataset -->
+    <owl:ObjectProperty rdf:about="#requiereDataset">
+        <rdfs:domain rdf:resource="#Algoritmo"/>
+        <rdfs:range rdf:resource="#Dataset"/>
+        <rdfs:label xml:lang="es">requiere dataset</rdfs:label>
+        <rdfs:comment>Indica el tipo de dataset que requiere un algoritmo para funcionar.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- aplicaMetrica -->
+    <owl:ObjectProperty rdf:about="#aplicaMetrica">
+        <rdfs:domain rdf:resource="#TareaIA"/>
+        <rdfs:range rdf:resource="#Metrica"/>
+        <rdfs:label xml:lang="es">aplica métrica</rdfs:label>
+        <rdfs:comment>Relaciona una tarea de IA con las métricas estándar para evaluarla.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- ============================================================ -->
+    <!--  DATA PROPERTIES                                             -->
+    <!-- ============================================================ -->
+
+    <!-- ModeloIA Data Properties -->
+    <owl:DatatypeProperty rdf:about="#nombreModelo">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">nombre del modelo</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#anioPublicacion">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="xsd:integer"/>
+        <rdfs:label xml:lang="es">año de publicación</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#numeroParametros">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="xsd:long"/>
+        <rdfs:label xml:lang="es">número de parámetros</rdfs:label>
+        <rdfs:comment>Cantidad total de parámetros entrenables del modelo.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#tipoAprendizaje">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">tipo de aprendizaje</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#arquitectura">
+        <rdfs:domain rdf:resource="#ModeloIA"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">arquitectura</rdfs:label>
+        <rdfs:comment>Nombre de la arquitectura de red neuronal empleada (Transformer, CNN, RNN, etc.).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Dataset Data Properties -->
+    <owl:DatatypeProperty rdf:about="#nombreDataset">
+        <rdfs:domain rdf:resource="#Dataset"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">nombre del dataset</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#cantidadMuestras">
+        <rdfs:domain rdf:resource="#Dataset"/>
+        <rdfs:range rdf:resource="xsd:integer"/>
+        <rdfs:label xml:lang="es">cantidad de muestras</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#etiquetado">
+        <rdfs:domain rdf:resource="#Dataset"/>
+        <rdfs:range rdf:resource="xsd:boolean"/>
+        <rdfs:label xml:lang="es">está etiquetado</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#dominio">
+        <rdfs:domain rdf:resource="#Dataset"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">dominio</rdfs:label>
+        <rdfs:comment>Campo de aplicación del dataset (medicina, finanzas, visión, etc.).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Algoritmo Data Properties -->
+    <owl:DatatypeProperty rdf:about="#nombreAlgoritmo">
+        <rdfs:domain rdf:resource="#Algoritmo"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">nombre del algoritmo</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#tasaAprendizaje">
+        <rdfs:domain rdf:resource="#AlgoritmoOptimizacion"/>
+        <rdfs:range rdf:resource="xsd:float"/>
+        <rdfs:label xml:lang="es">tasa de aprendizaje</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Metrica Data Properties -->
+    <owl:DatatypeProperty rdf:about="#nombreMetrica">
+        <rdfs:domain rdf:resource="#Metrica"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">nombre de la métrica</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#valorOptimo">
+        <rdfs:domain rdf:resource="#Metrica"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">valor óptimo</rdfs:label>
+        <rdfs:comment>Indica si el valor óptimo es máximo o mínimo (maximizar o minimizar).</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <!-- Framework Data Properties -->
+    <owl:DatatypeProperty rdf:about="#nombreFramework">
+        <rdfs:domain rdf:resource="#Framework"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">nombre del framework</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#lenguajeProgramacion">
+        <rdfs:domain rdf:resource="#Framework"/>
+        <rdfs:range rdf:resource="xsd:string"/>
+        <rdfs:label xml:lang="es">lenguaje de programación</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- ============================================================ -->
+    <!--  INSTANCIAS                                                   -->
+    <!-- ============================================================ -->
+
+    <!-- === Instancias: ModeloLenguaje === -->
+    <owl:NamedIndividual rdf:about="#GPT4">
+        <rdf:type rdf:resource="#ModeloLenguaje"/>
+        <nombreModelo>GPT-4</nombreModelo>
+        <anioPublicacion rdf:datatype="xsd:integer">2023</anioPublicacion>
+        <numeroParametros rdf:datatype="xsd:long">1000000000000</numeroParametros>
+        <arquitectura>Transformer Decoder</arquitectura>
+        <tipoAprendizaje>Supervisado y Aprendizaje por Refuerzo con Retroalimentación Humana</tipoAprendizaje>
+        <entrenaCon rdf:resource="#CommonCrawlDataset"/>
+        <usaAlgoritmo rdf:resource="#AdamW"/>
+        <evaluadoCon rdf:resource="#BLEU"/>
+        <resuelve rdf:resource="#TareaGeneracionTexto"/>
+        <implementadoCon rdf:resource="#PyTorchFramework"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BERT">
+        <rdf:type rdf:resource="#ModeloLenguaje"/>
+        <nombreModelo>BERT</nombreModelo>
+        <anioPublicacion rdf:datatype="xsd:integer">2018</anioPublicacion>
+        <numeroParametros rdf:datatype="xsd:long">340000000</numeroParametros>
+        <arquitectura>Transformer Encoder</arquitectura>
+        <tipoAprendizaje>Supervisado con Preentrenamiento</tipoAprendizaje>
+        <entrenaCon rdf:resource="#WikipediaDataset"/>
+        <usaAlgoritmo rdf:resource="#AdamW"/>
+        <evaluadoCon rdf:resource="#Accuracy"/>
+        <resuelve rdf:resource="#TareaClasificacion"/>
+        <implementadoCon rdf:resource="#TensorFlowFramework"/>
+    </owl:NamedIndividual>
+
+    <!-- === Instancias: ModeloVision === -->
+    <owl:NamedIndividual rdf:about="#ResNet50">
+        <rdf:type rdf:resource="#ModeloVision"/>
+        <nombreModelo>ResNet-50</nombreModelo>
+        <anioPublicacion rdf:datatype="xsd:integer">2015</anioPublicacion>
+        <numeroParametros rdf:datatype="xsd:long">25000000</numeroParametros>
+        <arquitectura>Red Neuronal Convolucional con Conexiones Residuales</arquitectura>
+        <tipoAprendizaje>Supervisado</tipoAprendizaje>
+        <entrenaCon rdf:resource="#ImageNetDataset"/>
+        <usaAlgoritmo rdf:resource="#SGD"/>
+        <evaluadoCon rdf:resource="#TopKAccuracy"/>
+        <resuelve rdf:resource="#TareaClasificacion"/>
+        <implementadoCon rdf:resource="#PyTorchFramework"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#YOLOv8">
+        <rdf:type rdf:resource="#ModeloVision"/>
+        <nombreModelo>YOLOv8</nombreModelo>
+        <anioPublicacion rdf:datatype="xsd:integer">2023</anioPublicacion>
+        <numeroParametros rdf:datatype="xsd:long">11000000</numeroParametros>
+        <arquitectura>CNN con cabeza de detección en tiempo real</arquitectura>
+        <tipoAprendizaje>Supervisado</tipoAprendizaje>
+        <entrenaCon rdf:resource="#COCODataset"/>
+        <usaAlgoritmo rdf:resource="#SGD"/>
+        <evaluadoCon rdf:resource="#mAP"/>
+        <resuelve rdf:resource="#TareaDeteccionObjetos"/>
+        <implementadoCon rdf:resource="#PyTorchFramework"/>
+    </owl:NamedIndividual>
+
+    <!-- === Instancias: ModeloGenerativo === -->
+    <owl:NamedIndividual rdf:about="#StableDiffusion">
+        <rdf:type rdf:resource="#ModeloGenerativo"/>
+        <nombreModelo>Stable Diffusion</nombreModelo>
+        <anioPublicacion rdf:datatype="xsd:integer">2022</anioPublicacion>
+        <arquitectura>Diffusion Model con U-Net</arquitectura>
+        <tipoAprendizaje>Supervisado con Ruido Difuso</tipoAprendizaje>
+        <entrenaCon rdf:resource="#LAIONDataset"/>
+        <usaAlgoritmo rdf:resource="#AdamW"/>
+        <implementadoCon rdf:resource="#PyTorchFramework"/>
+    </owl:NamedIndividual>
+
+    <!-- === Instancias: ModeloAprendizajeAutomatico === -->
+    <owl:NamedIndividual rdf:about="#RandomForest">
+        <rdf:type rdf:resource="#ModeloAprendizajeAutomatico"/>
+        <nombreModelo>Random Forest</nombreModelo>
+        <arquitectura>Ensemble de Árboles de Decisión</arquitectura>
+        <tipoAprendizaje>Supervisado</tipoAprendizaje>
+        <entrenaCon rdf:resource="#DatasetTablularGenerico"/>
+        <usaAlgoritmo rdf:resource="#AlgoritmoArbolDecision"/>
+        <evaluadoCon rdf:resource="#F1Score"/>
+        <resuelve rdf:resource="#TareaClasificacion"/>
+        <implementadoCon rdf:resource="#ScikitLearnFramework"/>
+    </owl:NamedIndividual>
+
+    <!-- === Instancias: Dataset === -->
+    <owl:NamedIndividual rdf:about="#ImageNetDataset">
+        <rdf:type rdf:resource="#DatasetImagen"/>
+        <nombreDataset>ImageNet</nombreDataset>
+        <cantidadMuestras rdf:datatype="xsd:integer">1281167</cantidadMuestras>
+        <etiquetado rdf:datatype="xsd:boolean">true</etiquetado>
+        <dominio>Visión por Computadora</dominio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#COCODataset">
+        <rdf:type rdf:resource="#DatasetImagen"/>
+        <nombreDataset>MS COCO</nombreDataset>
+        <cantidadMuestras rdf:datatype="xsd:integer">330000</cantidadMuestras>
+        <etiquetado rdf:datatype="xsd:boolean">true</etiquetado>
+        <dominio>Detección de Objetos y Segmentación</dominio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CommonCrawlDataset">
+        <rdf:type rdf:resource="#DatasetTexto"/>
+        <nombreDataset>Common Crawl</nombreDataset>
+        <cantidadMuestras rdf:datatype="xsd:integer">1000000000</cantidadMuestras>
+        <etiquetado rdf:datatype="xsd:boolean">false</etiquetado>
+        <dominio>Procesamiento de Lenguaje Natural</dominio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#WikipediaDataset">
+        <rdf:type rdf:resource="#DatasetTexto"/>
+        <nombreDataset>Wikipedia Corpus</nombreDataset>
+        <cantidadMuestras rdf:datatype="xsd:integer">6000000</cantidadMuestras>
+        <etiquetado rdf:datatype="xsd:boolean">false</etiquetado>
+        <dominio>Procesamiento de Lenguaje Natural</dominio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#LAIONDataset">
+        <rdf:type rdf:resource="#DatasetImagen"/>
+        <nombreDataset>LAION-5B</nombreDataset>
+        <cantidadMuestras rdf:datatype="xsd:integer">5000000000</cantidadMuestras>
+        <etiquetado rdf:datatype="xsd:boolean">true</etiquetado>
+        <dominio>Texto e Imagen Multimodal</dominio>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DatasetTablularGenerico">
+        <rdf:type rdf:resource="#DatasetTabular"/>
+        <nombreDataset>Dataset Tabular Estructurado</nombreDataset>
+        <etiquetado rdf:datatype="xsd:boolean">true</etiquetado>
+        <dominio>Finanzas y Datos Estructurados</dominio>
+    </owl:NamedIndividual>
+
+    <!-- === Instancias: Algoritmo === -->
+    <owl:NamedIndividual rdf:about="#AdamW">
+        <rdf:type rdf:resource="#AlgoritmoOptimizacion"/>
+        <nombreAlgoritmo>AdamW (Adam con Weight Decay)</nombreAlgoritmo>
+        <tasaAprendizaje rdf:datatype="xsd:float">0.0001</tasaAprendizaje>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#SGD">
+        <rdf:type rdf:resource="#AlgoritmoOptimizacion"/>
+        <nombreAlgoritmo>Stochastic Gradient Descent</nombreAlgoritmo>
+        <tasaAprendizaje rdf:datatype="xsd:float">0.01</tasaAprendizaje>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Backpropagation">
+        <rdf:type rdf:resource="#AlgoritmoSupervisado"/>
+        <nombreAlgoritmo>Retropropagación del Error</nombreAlgoritmo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#KMeans">
+        <rdf:type rdf:resource="#AlgoritmoNoSupervisado"/>
+        <nombreAlgoritmo>K-Means Clustering</nombreAlgoritmo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AlgoritmoArbolDecision">
+        <rdf:type rdf:resource="#AlgoritmoSupervisado"/>
+        <nombreAlgoritmo>Árbol de Decisión (CART)</nombreAlgoritmo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#RLHF">
+        <rdf:type rdf:resource="#AlgoritmoRefuerzo"/>
+        <nombreAlgoritmo>Reinforcement Learning from Human Feedback</nombreAlgoritmo>
+    </owl:NamedIndividual>
+
+    <!-- === Instancias: Metrica === -->
+    <owl:NamedIndividual rdf:about="#Accuracy">
+        <rdf:type rdf:resource="#MetricaClasificacion"/>
+        <nombreMetrica>Accuracy (Exactitud)</nombreMetrica>
+        <valorOptimo>Maximizar (valor entre 0 y 1)</valorOptimo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#F1Score">
+        <rdf:type rdf:resource="#MetricaClasificacion"/>
+        <nombreMetrica>F1-Score</nombreMetrica>
+        <valorOptimo>Maximizar (media armónica entre precisión y recall)</valorOptimo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TopKAccuracy">
+        <rdf:type rdf:resource="#MetricaClasificacion"/>
+        <nombreMetrica>Top-5 Accuracy</nombreMetrica>
+        <valorOptimo>Maximizar</valorOptimo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#mAP">
+        <rdf:type rdf:resource="#MetricaClasificacion"/>
+        <nombreMetrica>mAP (Mean Average Precision)</nombreMetrica>
+        <valorOptimo>Maximizar (valor entre 0 y 1)</valorOptimo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#RMSE">
+        <rdf:type rdf:resource="#MetricaRegresion"/>
+        <nombreMetrica>RMSE (Root Mean Square Error)</nombreMetrica>
+        <valorOptimo>Minimizar (cuanto más cercano a 0, mejor)</valorOptimo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BLEU">
+        <rdf:type rdf:resource="#MetricaGeneracion"/>
+        <nombreMetrica>BLEU Score</nombreMetrica>
+        <valorOptimo>Maximizar (valor entre 0 y 1)</valorOptimo>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FID">
+        <rdf:type rdf:resource="#MetricaGeneracion"/>
+        <nombreMetrica>FID (Fréchet Inception Distance)</nombreMetrica>
+        <valorOptimo>Minimizar (cuanto más cercano a 0, mejor calidad de imagen)</valorOptimo>
+    </owl:NamedIndividual>
+
+    <!-- === Instancias: TareaIA === -->
+    <owl:NamedIndividual rdf:about="#TareaClasificacion">
+        <rdf:type rdf:resource="#Clasificacion"/>
+        <aplicaMetrica rdf:resource="#Accuracy"/>
+        <aplicaMetrica rdf:resource="#F1Score"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TareaDeteccionObjetos">
+        <rdf:type rdf:resource="#DeteccionObjetos"/>
+        <aplicaMetrica rdf:resource="#mAP"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TareaGeneracionTexto">
+        <rdf:type rdf:resource="#GeneracionTexto"/>
+        <aplicaMetrica rdf:resource="#BLEU"/>
+    </owl:NamedIndividual>
+
+    <!-- === Instancias: Framework === -->
+    <owl:NamedIndividual rdf:about="#PyTorchFramework">
+        <rdf:type rdf:resource="#Framework"/>
+        <nombreFramework>PyTorch</nombreFramework>
+        <lenguajeProgramacion>Python</lenguajeProgramacion>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#TensorFlowFramework">
+        <rdf:type rdf:resource="#Framework"/>
+        <nombreFramework>TensorFlow / Keras</nombreFramework>
+        <lenguajeProgramacion>Python</lenguajeProgramacion>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ScikitLearnFramework">
+        <rdf:type rdf:resource="#Framework"/>
+        <nombreFramework>Scikit-Learn</nombreFramework>
+        <lenguajeProgramacion>Python</lenguajeProgramacion>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
