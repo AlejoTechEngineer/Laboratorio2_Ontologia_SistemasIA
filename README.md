@@ -38,6 +38,21 @@
 
 ---
 
+## Arquitectura
+
+```mermaid
+flowchart TD
+    A[Ontologia_SistemasIA.owl - RDF/XML] --> B[Protege 5.6.4 - Editor Ontologico]
+    B --> C[ModeloIA - GPT-4 - BERT - YOLOv8]
+    B --> D[Dataset - ImageNet - CommonCrawl]
+    B --> E[Algoritmo - AdamW - Backprop - RLHF]
+    B --> F[Metrica - Accuracy - F1 - BLEU]
+    B --> G[TareaIA - Clasificacion - Generacion]
+    B --> H[Framework - PyTorch - TensorFlow]
+    C & D & E & F & G & H --> I[Object Properties - entrenadoCon - usaMetrica - 364 axiomas]
+    I --> J[Razonador HermiT - Inferencia automatica]
+```
+
 ## 🎯 Descripción General
 
 Esta ontología modela formalmente el **ecosistema de la Inteligencia Artificial moderna** usando el estándar **OWL 2** (Web Ontology Language). Permite representar, consultar y razonar sobre los componentes clave de un sistema de IA y las relaciones semánticas entre ellos.
@@ -270,17 +285,3 @@ Ingeniería Informática -
 *Instructor: Ing. Juan Carlos Reyes Figueroa*
 
 </div>
-## Arquitectura
-
-```mermaid
-flowchart TD
-    A[Ontologia_SistemasIA.owl - RDF/XML] --> B[Protege 5.6.4 - Editor Ontologico]
-    B --> C[ModeloIA - GPT-4 - BERT - YOLOv8]
-    B --> D[Dataset - ImageNet - CommonCrawl]
-    B --> E[Algoritmo - AdamW - Backprop - RLHF]
-    B --> F[Metrica - Accuracy - F1 - BLEU]
-    B --> G[TareaIA - Clasificacion - Generacion]
-    B --> H[Framework - PyTorch - TensorFlow]
-    C & D & E & F & G & H --> I[Object Properties - entrenadoCon - usaMetrica - 364 axiomas]
-    I --> J[Razonador HermiT - Inferencia automatica]
-```
