@@ -270,3 +270,17 @@ Ingeniería Informática -
 *Instructor: Ing. Juan Carlos Reyes Figueroa*
 
 </div>
+## Arquitectura
+
+```mermaid
+flowchart TD
+    A[Ontologia_SistemasIA.owl - RDF/XML] --> B[Protege 5.6.4 - Editor Ontologico]
+    B --> C[ModeloIA - GPT-4 - BERT - YOLOv8]
+    B --> D[Dataset - ImageNet - CommonCrawl]
+    B --> E[Algoritmo - AdamW - Backprop - RLHF]
+    B --> F[Metrica - Accuracy - F1 - BLEU]
+    B --> G[TareaIA - Clasificacion - Generacion]
+    B --> H[Framework - PyTorch - TensorFlow]
+    C & D & E & F & G & H --> I[Object Properties - entrenadoCon - usaMetrica - 364 axiomas]
+    I --> J[Razonador HermiT - Inferencia automatica]
+```
