@@ -38,6 +38,17 @@
 
 ---
 
+## 🎯 Descripción General
+
+Esta ontología modela formalmente el **ecosistema de la Inteligencia Artificial moderna** usando el estándar **OWL 2** (Web Ontology Language). Permite representar, consultar y razonar sobre los componentes clave de un sistema de IA y las relaciones semánticas entre ellos.
+
+El dominio captura entidades reales como **GPT-4**, **BERT**, **YOLOv8**, **Stable Diffusion**, **PyTorch**, **TensorFlow** y los datasets, algoritmos y métricas asociados a cada uno — estructurados en una jerarquía ontológica coherente con **364 axiomas**.
+
+**¿Por qué importa?**  
+Las ontologías permiten que las máquinas *entiendan* el significado de los datos, no solo su estructura. En IA, esto habilita búsqueda semántica, razonamiento automático e integración de conocimiento entre sistemas heterogéneos.
+
+---
+
 ## Arquitectura
 
 ```mermaid
@@ -52,17 +63,6 @@ flowchart TD
     C & D & E & F & G & H --> I[Object Properties - entrenadoCon - usaMetrica - 364 axiomas]
     I --> J[Razonador HermiT - Inferencia automatica]
 ```
-
-## 🎯 Descripción General
-
-Esta ontología modela formalmente el **ecosistema de la Inteligencia Artificial moderna** usando el estándar **OWL 2** (Web Ontology Language). Permite representar, consultar y razonar sobre los componentes clave de un sistema de IA y las relaciones semánticas entre ellos.
-
-El dominio captura entidades reales como **GPT-4**, **BERT**, **YOLOv8**, **Stable Diffusion**, **PyTorch**, **TensorFlow** y los datasets, algoritmos y métricas asociados a cada uno — estructurados en una jerarquía ontológica coherente con **364 axiomas**.
-
-**¿Por qué importa?**  
-Las ontologías permiten que las máquinas *entiendan* el significado de los datos, no solo su estructura. En IA, esto habilita búsqueda semántica, razonamiento automático e integración de conocimiento entre sistemas heterogéneos.
-
----
 
 ## 📊 Estadísticas de la Ontología
 
